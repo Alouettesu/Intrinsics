@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta content="IE=9; IE=8; IE=7; IE=EDGE" http-equiv="X-UA-Compatible"/>
+  <meta charset="utf-8"/>
+  <title>
+   Intel® Intrinsics Guide
+  </title>
+  <link href="files/favicon.ico" rel="shortcut icon"/>
+  <meta content="!" name="fragment"/>
+  <meta content="The Intel® Intrinsics Guide is the reference for Intel intrinsics, which provide access to Intel instructions such as Intel® SSE, Intel® AVX, and Intel® AVX2." name="Description">
+  </meta>
+ </head>
+ <body>
+  <div id="ig_body">
+   <link href="files/style.min.css?3-6-1" rel="stylesheet" type="text/css"/>
+   <link href="files/style-offline.min.css?3-6-1" rel="stylesheet" type="text/css"/>
+   <script src="files/jquery-1.10.2.min.js" type="text/javascript">
+   </script>
+   <div id="ig_container">
+    <div id="ig_left">
+     <div id="ig_title">
+      <div id="title">
+       <b>
+        Intel® Intrinsics Guide
+       </b>
+      </div>
+      <div style="clear:both;">
+      </div>
+      <br/>
+     </div>
+     <div>
+      <b>
+       Instruction Set
+      </b>
+     </div>
+     <div id="techs">
+      <div class="MMX tech">
+       <input type="checkbox"/>
+       MMX
+      </div>
+      <div class="SSE tech">
+       <input type="checkbox"/>
+       SSE
+      </div>
+      <div class="SSE2 tech">
+       <input type="checkbox"/>
+       SSE2
+      </div>
+      <div class="SSE3 tech">
+       <input type="checkbox"/>
+       SSE3
+      </div>
+      <div class="SSSE3 tech">
+       <input type="checkbox"/>
+       SSSE3
+      </div>
+      <div class="SSE4_1 tech">
+       <input type="checkbox"/>
+       SSE4.1
+      </div>
+      <div class="SSE4_2 tech">
+       <input type="checkbox"/>
+       SSE4.2
+      </div>
+      <div class="AVX tech">
+       <input type="checkbox"/>
+       AVX
+      </div>
+      <div class="AVX2 tech">
+       <input type="checkbox"/>
+       AVX2
+      </div>
+      <div class="FMA tech">
+       <input type="checkbox"/>
+       FMA
+      </div>
+      <div class="AVX_VNNI tech">
+       <input type="checkbox"/>
+       AVX_VNNI
+      </div>
+      <div class="AVX_512 tech">
+       <input type="checkbox"/>
+       AVX-512
+      </div>
+      <div id="avx512_techs" style="display:none;">
+       <div class="AVX512F avx512tech">
+        <input type="checkbox"/>
+        AVX-512F
+       </div>
+       <div class="AVX512BW avx512tech">
+        <input type="checkbox"/>
+        AVX-512BW
+       </div>
+       <div class="AVX512CD avx512tech">
+        <input type="checkbox"/>
+        AVX-512CD
+       </div>
+       <div class="AVX512DQ avx512tech">
+        <input type="checkbox"/>
+        AVX-512DQ
+       </div>
+       <div class="AVX512ER avx512tech">
+        <input type="checkbox"/>
+        AVX-512ER
+       </div>
+       <div class="AVX512IFMA52 avx512tech">
+        <input type="checkbox"/>
+        AVX-512IFMA52
+       </div>
+       <div class="AVX512PF avx512tech">
+        <input type="checkbox"/>
+        AVX-512PF
+       </div>
+       <div class="AVX512VL avx512tech">
+        <input type="checkbox"/>
+        AVX-512VL
+       </div>
+       <div class="AVX512VPOPCNTDQ avx512tech">
+        <input type="checkbox"/>
+        AVX-512VPOPCNTDQ
+       </div>
+       <div class="AVX512_4FMAPS avx512tech">
+        <input type="checkbox"/>
+        AVX-512_4FMAPS
+       </div>
+       <div class="AVX512_4VNNIW avx512tech">
+        <input type="checkbox"/>
+        AVX-512_4VNNIW
+       </div>
+       <div class="AVX512_BF16 avx512tech">
+        <input type="checkbox"/>
+        AVX-512_BF16
+       </div>
+       <div class="AVX512_BITALG avx512tech">
+        <input type="checkbox"/>
+        AVX-512_BITALG
+       </div>
+       <div class="AVX512_VBMI avx512tech">
+        <input type="checkbox"/>
+        AVX-512_VBMI
+       </div>
+       <div class="AVX512_VBMI2 avx512tech">
+        <input type="checkbox"/>
+        AVX-512_VBMI2
+       </div>
+       <div class="AVX512_VNNI avx512tech">
+        <input type="checkbox"/>
+        AVX-512_VNNI
+       </div>
+       <div class="AVX512_VP2INTERSECT avx512tech">
+        <input type="checkbox"/>
+        AVX-512_VP2INTERSECT
+       </div>
+       <div class="AVX512_FP16 avx512tech">
+        <input type="checkbox"/>
+        AVX-512_FP16
+       </div>
+      </div>
+      <div class="KNC tech">
+       <input type="checkbox"/>
+       KNC
+      </div>
+      <div class="AMX tech">
+       <input type="checkbox"/>
+       AMX
+      </div>
+      <div id="amx_techs" style="display:none;">
+       <div class="AMXBF16 amxtech">
+        <input type="checkbox"/>
+        AMX-BF16
+       </div>
+       <div class="AMXINT8 amxtech">
+        <input type="checkbox"/>
+        AMX-INT8
+       </div>
+       <div class="AMXTILE amxtech">
+        <input type="checkbox"/>
+        AMX-TILE
+       </div>
+      </div>
+      <div class="SVML tech">
+       <input type="checkbox"/>
+       SVML
+      </div>
+      <div class="Other tech">
+       <input type="checkbox"/>
+       Other
+      </div>
+      <div id="other_techs">
+      </div>
+     </div>
+     <br/>
+     <div>
+      <b>
+       Categories
+      </b>
+     </div>
+     <div id="categories">
+     </div>
+     <br/>
+     <br/>
+     <div class="info" id="ig_info">
+     </div>
+     <div class="info">
+      <p>
+       <a href="files/release-notes.html">
+        Release Notes
+       </a>
+      </p>
+     </div>
+     <div class="info">
+      <p>
+      </p>
+     </div>
+     <div class="info" id="ig_notices">
+      <a href="files/notices-and-disclaimers.html">
+       Notices and Disclaimers
+      </a>
+     </div>
+    </div>
+    <div id="ig_main">
+     <div id="ig_about">
+      <p>
+       The
+       <span id="ig_offline_title">
+        offline
+       </span>
+       Intel® Intrinsics Guide contains reference information for Intel intrinsics, which provide access to Intel instructions such as Intel® Streaming SIMD Extensions (Intel® SSE), Intel® Advanced Vector Extensions (Intel® AVX), and Intel® Advanced Vector Extensions 2 (Intel® AVX2).
+      </p>
+      <p>
+       <ul>
+        <li id="ig_cpp_compiler_dgr_offline">
+         For information about how Intel compilers handle intrinsics, see the
+         <a href="https://software.intel.com/content/www/us/en/develop/documentation/cpp-compiler-developer-guide-and-reference/top/compiler-reference/intrinsics.html">
+          Intel® C++ Compiler Classic Developer Guide and Reference
+         </a>
+         .
+        </li>
+        <li>
+         For questions about Intel intrinsics, visit the
+         <a href="https://community.intel.com/t5/Intel-C-Compiler/bd-p/c-compiler">
+          Intel® C++ Compiler
+         </a>
+         board.
+        </li>
+        <li id="ig_latest_online">
+         For the latest Intel intrinsics reference information, view the online
+         <a href="https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html">
+          Intel® Intrinsics Guide
+         </a>
+         .
+        </li>
+       </ul>
+      </p>
+     </div>
+     <div id="ig_search_wrapper">
+      <div id="ig_search_tokens">
+      </div>
+      <input autocomplete="off" id="ig_search" type="text" value="_mm_search"/>
+      <img alt="Clear" id="ig_clear" src="files/x.png" style="display:none;"/>
+     </div>
+     <br>
+      <div id="intrinsics_list">
+       Loading intrinsics data ...
+      </div>
+     </br>
+    </div>
+    <div style="clear:both;">
+    </div>
+   </div>
+   <div class="popbox sequence" style="width:250px;">
+    This intrinsic generates a sequence of instructions, which may perform worse than a native instruction. Consider the performance impact of this intrinsic.
+   </div>
+   <script src="files/intrinsicsguide.min.js?3-6-1" type="text/javascript">
+   </script>
+   <script src="files/data.js" type="text/javascript">
+   </script>
+   <script src="files/perf.js" type="text/javascript">
+   </script>
+   <script src="files/perf2.js" type="text/javascript">
+   </script>
+  </div>
+ </body>
+</html>

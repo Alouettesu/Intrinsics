@@ -1,0 +1,384 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv='X-UA-Compatible' content='IE=9; IE=8; IE=7; IE=EDGE' />
+        <title>Intel&reg; Intrinsics Guide</title>
+        <link rel='shortcut icon' href='favicon.ico' />
+        <link type='text/css' rel='stylesheet' href='style.min.css' />
+        <link type='text/css' rel='stylesheet' href='style-offline.min.css' />
+    </head>
+    <body>
+        <div id='ig_body'>
+            <div id='ig_container'>
+                <div style='margin:0px;padding:15px 20px;'>
+                    <div id='ig_title'>
+                        <div id='title'>
+                            <b>Intel&reg; Intrinsics Guide</b>
+                        </div>
+                        <div style='clear:both;'></div>
+                    </div>
+                    <section>
+                        <h2>Release Notes</h2>
+                        <h3>3.6.1 Release</h3>12/06/2021
+                        <ul>
+                            <li>Corrected operation description for _mm_encodekey256_u32: Change handle size of encodekey256 from 384 to 512.</li>
+                            <li> Added seven intrinsics for AVX512_FP16: _mm_mask3_fcmadd_(round_)sch, _mm_mask3_fmadd_(round_)sch, _mm(256, 512)_set1_pch.</li>
+                            <li> Fixed part of KNCNI intrinsic CPUID flag.</li>
+                            <li> Corrected description for _mm256_hsub_ps.</li>
+                            <li> Corrected categories for *_shuffle_epi8.</li>
+                            <li> Improved description of AVX512_FP16 *_min/max_* intrinsics.</li>
+                            <li> Improved operation description of AVX512_FP16 *_comi_* intrinsics.</li>
+                            <li> Added 11 intrinsics for AVX512_BF16: _mm(256/512)_(mask/maskz)_cvtpbh_ps, _mm_cvtsbh_ss, _mm_cvtness_sbh.</li>
+                            <li> Added 36 intrinsics alias for AVX512_FP16: *_mul_*ch alias for *_f*mul_*ch.</li>
+                        </ul>
+                        <h2>Release Notes</h2>
+                        <h3>3.6.0 Release</h3>06/30/2021
+                        <ul>
+                            <li>Added intrinsics for AVX512_FP16, ENQCMD, AVX_VNNI, HRESET, KEYLOCKER, KEYLOCKER_WIDE and UINTR.</li>
+                            <li>Added two intrinsics for AVX512F: _mm512_(mask_)i32loscatter_epi64.</li>
+                            <li>Improved description for WAITPKG intrinsics.</li>
+                            <li>Improved operation for *_reduce_* intrinsics.</li>
+                            <li>Improved description for *_min/max_* float intrinsics.</li>
+                            <li>Improved operation for *_comi_* intrinsics.</li>
+                            <li>Updated XML format: removed &lt;type&gt; tag; reordered the tags and attributes.</li>
+                            <li>Shared CPUID intrinsics now will be listed as two separate items.</li>
+                            <li>Updated notices and disclaimers.</li>
+                            <li>Update introduction with links to supporting documentation.</li>
+                            <li>Updated fonts to use web-safe font stack.</li>
+                        </ul>
+                        <h3>3.5.4 Release</h3>10/19/2020
+                        <ul>
+                            <li>Fixed a recurring typo ("Seqeuence" --> "Sequence").</li>
+                        </ul>
+                        <h3>3.5.3 Release</h3>06/30/2020
+                        <ul>
+                            <li>Added intrinsics for AMX-TILE, AMX-BF16, and AMX-INT8.</li>
+                        </ul>
+                        <h3>3.5.2 Release</h3>06/05/2020
+                        <ul>
+                            <li>Added intrinsics for SERIALIZE and TSXLDTRK.</li>
+                            <li>Improved indication of intrinsics that are sequences of instructions.</li>
+                            <li>Improved presentation of long lines in operations.</li>
+                        </ul>
+                        <h3>3.5.1 Release</h3>05/22/2020
+                        <ul>
+                            <li>Updated latency and throughput data for Skylake.</li>
+                            <li>Resolved an issue preventing intrinsics from loading.</li>
+                        </ul>
+                        <h3>3.5.0 Release</h3>03/16/2020
+                        <ul>
+                            <li>Added latency and throughput data for 10th gen Intel&reg; Core&trade; processor family (Icelake).</li>
+                            <li>Updated XML format: added a &lt;return&gt; tag for the return type and removed the rettype attribute; added several attributes to &lt;return&gt; and &lt;parameter&gt;; added XED iform attribute to  &lt;instruction&gt;.</li>
+                            <li>Added instruction forms for many AVX512 intrinsics.</li>
+                            <li>Clarified embedded-rounding vs suppress-all-exceptions distinction for many intrinsics.</li>
+                            <li>Clarified masking operands in instruction forms.</li>
+                            <li>Corrected operation for all AVX512_VNNI and GFNI intrinsics.</li>
+                            <li>Clarified immediate bit-range access in many operations.</li>
+                            <li>Corrected destination zeroing for many store intrinsics.</li>
+                            <li>Clarified operator precedence for many intrinsic operations.</li>
+                            <li>Clarified indication of signed integers in many descriptions.</li>
+                            <li>Corrected scalar upper pass through variable for many intrinsics.</li>
+                            <li>Clarified memory accesses for many intrinsics.</li>
+                            <li>Added CPUID for CET_SS intrinsics.</li>
+                            <li>Corrected operations for many scatter and gather intrinsics.</li>
+                            <li>Corrected descriptions and operations for SVML intrinsics involving complex numbers.</li>
+                            <li>Corrected operation for _mm512_set_epi8.</li>
+                            <li>Corrected description for several *_set_epi* intrinsics.</li>
+                            <li>Corrected instruction for some *_xor_* intrinsics.</li>
+                            <li>Corrected description and operation for *_ktestc_* and *_kortestc_* intrinsics.</li>
+                            <li>Corrected operation for several *_permutex2var_* intrinsics.</li>
+                            <li>Clarified imm8 bit ranges for _alignr_ intrinsics.</li>
+                            <li>Corrected write mask pass through for some broadcast_i* and broadcast_f* intrinsics.</li>
+                            <li>Corrected imm8 bit range for some shuffle_i* intrinsics.</li>
+                            <li>Corrected operation for _kor_* intrinsics.</li>
+                            <li>Corrected operations for unmasked _movedup_ intrinsics.</li>
+                            <li>Corrected operations for *_set4_* and *_setr4_* intrinsics.</li>
+                            <li>Clarified imm8 bit range for _kshiftri_mask16.</li>
+                            <li>Corrected parameter types for *_4fmadd_ps intrinsics.</li>
+                            <li>Corrected operation for _mm256_mpsadbw_epu8.</li>
+                            <li>Corrected operations for *_maskz_mulhrs_epi16 intrinsics.</li>
+                            <li>Corrected operations for *_hadds_* intrinsics.</li>
+                            <li>Corrected saturation function for *_cvtusepi* intrinsics.</li>
+                            <li>Corrected shift direction for some *_srai_* intrinsics.</li>
+                            <li>Corrected operation for _mm256_mask_srlv_epi16.</li>
+                            <li>Corrected operation for _mm512_reduce_max_epi64.</li>
+                            <li>Corrected operations for _mm512_mask_permute4f128_* intrinsics.</li>
+                            <li>Corrected operations for _mm_tzcnti_* intrinsics.</li>
+                            <li>Corrected operations for several *_cvtt_* intrinsics.</li>
+                            <li>Corrected operations for several scalar conversion intrinsics.</li>
+                            <li>Corrected operations for several *_exp2a23_* intrinsics.</li>
+                            <li>Corrected operations for several intrinsics with single-precision reciprocals.</li>
+                            <li>Corrected operations for *_fmadd_ps intrinsics.</li>
+                            <li>Corrected operation for _mm_cvttss_si64.</li>
+                            <li>Corrected comparison operator for several cmpgt and cmplt intrinsics.</li>
+                            <li>Corrected operations for several right rotation intrinsics.</li>
+                            <li>Corrected operation for _mm_ceil_pd.</li>
+                            <li>Corrected operation for _mm512_mask_floor_ps.</li>
+                            <li>Corrected operations for several loadu intrinsics.</li>
+                            <li>Corrected src parameter for _mask_exp2a23_ intrinsics.</li>
+                        </ul>
+                        <h3>3.4.7 Release</h3>07/15/2019
+                        <ul>
+                            <li>Corrected operations for add/sub and sub/add intrinsics.</li>
+                            <li>Corrected operations for GFNI affine intrinsics.</li>
+                            <li>Corrected operations for dpbf16 intrinsics.</li>
+                        </ul>
+                        <h3>3.4.6 Release</h3>07/15/2019
+                        <ul>
+                            <li>Added intrinsics for AVX512_VP2INTERSECT.</li>
+                        </ul>
+                        <h3>3.4.5 Release</h3>05/30/2019
+                        <ul>
+                            <li>Added additional latency &amp; throughput data for AVX-512 instructions.</li>
+                            <li>Improvements to operations for most intrinsics.</li>
+                            <li>Corrections to operations for many intrinsics, including AVX512_BITALG and AVX512_VNNI.</li>
+                        </ul>
+                        <h3>3.4.4 Release</h3>04/17/2019
+                        <ul>
+                            <li>Added BF16 intrinsics.</li>
+                            <li>Corrected operations for *_reduce_ps/pd intrinsics.</li>
+                            <li>Corrected operations for non-mask sllv_epi16 intrinsics.</li>
+                        </ul>
+                        <h3>3.4.3 Release</h3>04/08/2019
+                        <ul>
+                            <li>Improved operation syntax for many intrinsics.</li>
+                            <li>Corrected parameters for several cmp intrinsics.</li>
+                            <li>Corrected details of _mm512[_mask]_log2_ps.</li>
+                            <li>Corrected operations for: _mm_cvtpd_ps, _m_pmaddwd, *_madd_epi16, *_maskz_sub_epi8, *_maskz_sub_epi16.</li>
+                            <li>Corrected instructions for _mm_comi_round_ss.</li>
+                            <li>Corrected description and operation for _lrot*,.</li>
+                            <li>Corrected instructions and descriptions and operation _tpause and _umwait.</li>
+                        </ul>
+                        <h3>3.4.2 Release</h3>10/05/2018
+                        <ul>
+                            <li>Added intrinsics for AVX512_BITALG, AVX512_VBMI2, AVX512_VNNI, GFNI, VAES, VPCLMULQDQ, and others.</li>
+                            <li>Corrected CPUID and description for load/storebe intrinsics.</li>
+                            <li>Corrected operation for _mm_mask_4fmadd_ss.</li>
+                            <li>Corrected description for _mm_srli_epi32.</li>
+                            <li>Corrected description for _mm_alignr_pi8.</li>
+                            <li>Corrected description and operation for _xtest.</li>
+                        </ul>
+                        <h3>3.4.1 Release</h3>04/26/2018
+                        <ul>
+                            <li>Added ptwrite and encl* intrinsics.</li>
+                            <li>Corrected description and operation for blend intrinsics with an immediate control.</li>
+                            <li>Corrected CPUID for _mm512_4fmadd_ps.</li>
+                            <li>Corrected description for masked compare intrinsics.</li>
+                            <li>Clarified that includes should use &lt;header.h&gt; rather than "header.h".</li>
+                            <li>Corrected operations for _mm512_kunpack* intrinsics.</li>
+                            <li>Further clarified up and down conversion for intrinsics supported on both KNC and AVX-512.</li>
+                            <li>Corrected return type for 4dpwssd* intrinsics.</li>
+                            <li>Corrected description and operation for scalar mask3 intrinsics.</li>
+                        </ul>
+                        <h3>3.4 Release</h3>09/07/2017
+                        <ul>
+                            <li>Added intrinsics for Knights Mill (KNM).</li>
+                            <li>Corrected references to "_MM_CMPINT_NE".</li>
+                            <li>Corrected instruction for _mm512_stream_si512.</li>
+                            <li>Corrected CPUID for _mm256_extract_epi8, _mm256_extract_epi16, _mm[256,512]_cvt[ss,sd,si256,si512].</li>
+                            <li>Improved description of _xbegin.</li>
+                            <li>Clarified up and down conversion for intrinsics supported on both KNC and AVX-512.</li>
+                            <li>Corrected description of _mm_countbits_64.</li>
+                        </ul>
+                        <h3>3.3.16 Release</h3>01/26/2017
+                        <ul>
+                            <li>Added additional latency &amp; throughput data up through 6th generation Intel&reg; Core&trade; processor family (Skylake) and 2nd Generation Intel&reg; Xeon Phi&trade; (Knights Landing).</li>
+                            <li>Added documentation on 36 intrinsics.</li>
+                            <li>Corrected operations for vsqrtss intrinsics.</li>
+                            <li>Corrected movd CPUID bits.</li>
+                        </ul>
+                        <h3>3.3.15 Release</h3>09/16/2016
+                        <ul>
+                            <li>Corrected operation for _mm_mpsadbw_epu8.</li>
+                            <li>Corrected latency and throughput data for FP16C intrinsics.</li>
+                            <li>Corrected operations for *_madd_epi16 intrinsics.</li>
+                            <li>Corrected operations for _subborrow_u* intrinsics.</li>
+                            <li>Corrected instruction forms for *_i32gather_* and *_i64gather_* intrinsics.</li>
+                            <li>Corrected operations *_i64gather_* intrinsics.</li>
+                            <li>Corrected operation for _mm256_shuffle_epi8.</li>
+                            <li>Corrected operations for _mm512_shuffle_epi8, _mm512_mask_shuffle_epi8, _mm512_maskz_shuffle_epi8, _mm256_mask_shuffle_epi8, _mm256_maskz_shuffle_epi8.</li>
+                            <li>Corrected descriptions and operations for *_sqrt_sd and *_sqrt_round_sd intrinsics.</li>
+                            <li>Corrected operations for _mm512_mask2int intrinsics.</li>
+                            <li>Corrected CPUIDs for _mm_undefined_* intrinsics.</li>
+                        </ul>
+                        <h3>3.3.14 Release</h3>01/12/2016
+                        <ul>
+                            <li>Corrected operations for *_cmpunord_* intrinsics.</li>
+                        </ul>
+                        <h3>3.3.13 Release</h3>12/02/2015
+                        <ul>
+                            <li>Clarified descriptions and operations for all intrinsics utilizing a bitwise AND NOT.</li>
+                            <li>Corrected description and operation for _mm512_fmadd233_ps and _mm512_mask_fmadd233_ps.</li>
+                            <li>Added AVX-512 versions of _mm512_mask2int and _mm512_int2mask.</li>
+                        </ul>
+                        <h3>3.3.12 Release</h3>09/28/2015
+                        <ul>
+                            <li>Corrected operations for multi-shift intrinsics.</li>
+                            <li>Corrected description and operation of _mm_test_all_ones.</li>
+                            <li>Corrected description for _mm512_sad_epu8.</li>
+                            <li>Corrected operation for _mm256_mpsadbw_epu8.</li>
+                        </ul>
+                        <h3>3.3.11 Release</h3>07/27/2015
+                        <ul>
+                            <li>Corrected operations for fmsubadd intrinsics.</li>
+                        </ul>
+                        <h3>3.3.10 Release</h3>06/24/2015
+                        <ul>
+                            <li>Corrected ADC, ADCX, and SBB intrinsics.</li>
+                        </ul>
+                        <h3>3.3.9 Release</h3>06/15/2015
+                        <ul>
+                            <li>Corrected operations for variable shift intrinsics.</li>
+                        </ul>
+                        <h3>3.3.8 Release</h3>05/26/2015
+                        <ul>
+                            <li>Corrected headers for all AVX-512 intrinsics.</li>
+                        </ul>
+                        <h3>3.3.7 Release</h3>02/20/2015
+                        <ul>
+                            <li>Corrected operations for _mm_sha1rnds4_epu32, _mm_sha1nexte_epu32, and _mm_sha1msg2_epu32.</li>
+                        </ul>
+                        <h3>3.3.6 Release</h3>02/02/2015
+                        <ul>
+                            <li>Corrected operations for floating-point hsub intrinsics.</li>
+                        </ul>
+                        <h3>3.3.5 Release</h3>01/29/2015
+                        <ul>
+                            <li>Added missing _BitScan*, _bittest*, _mm256_extract_epi*, _mm256_insert_epi*, and _mm_clflushopt intrinsics.</li>
+                        </ul>
+                        <h3>3.3.4 Release</h3>01/13/2015
+                        <ul>
+                            <li>Corrected parameter names, descriptions, and operations for intrinsics with immediate parameters, to clarify they are always 8-bits.</li>
+                            <li>Corrected description and operation for all pmaddwd intrinsics.</li>
+                        </ul>
+                        <h3>3.3.3 Release</h3>12/18/2014
+                        <ul>
+                            <li>Corrected description for _mm_maskmoveu_si128 and _mm_maskmove_si64.</li>
+                            <li>Corrected operation for  _mm512_[mask_]extload_* intrinsics.</li>
+                        </ul>
+                        <h3>3.3.2 Release</h3>12/10/2014
+                        <ul>
+                            <li>Corrected description for vpmaksmov intrinsics.</li>
+                            <li>Corrected description for (v)pmaddwd intrinsics.</li>
+                        </ul>
+                        <h3>3.3.1 Release</h3>10/17/2014
+                        <ul>
+                            <li>Corrected category for *_mask_cmp_*_mask, *_test_*_mask, and *_testn_*_maks intrinsics.</li>
+                            <li>Corrected description and operation for *_testn_*_maks intrinsics.</li>
+                            <li>Added description and operation for _mm_testn_epi64_mask and _mm_test_epi64_mask.</li>
+                            <li>Corrected typos in description of several getexp, packs, div, and broadcast intrinsics.</li>
+                            <li>Corrected instructions for *_mask_permutex2var_* and *_mask2_permutex2var_* intrinsics.</li>
+                            <li>Corrected for CPUID's for 128-bit and 256-bit lzcnt and conflict intrinsics.</li>
+                            <li>Corrected description for all broadcastw and fpclass intrinsics.</li>
+                        </ul>
+                        <h3>3.3.0 Release</h3>09/29/2014
+                        <ul>
+                            <li>Added AVX-512IFMA52 and AVX-512VBMI intrinsics.</li>
+                        </ul>
+                        <h3>3.2.2 Release</h3>09/03/2014
+                        <ul>
+                            <li>Corrected _mm512_mask_permute4f128_epi32 operation.</li>
+                        </ul>
+                        <h3>3.2.1 Release</h3>07/24/2014
+                        <ul>
+                            <li>Corrected CPUIDs for _mm_broadcastmb_epi64, _mm256_broadcastmb_epi64, _mm_broadcastmw_epi32, _mm256_broadcastmw_epi32, and _mm_movm_epi8.</li>
+                        </ul>
+                        <h3>3.2.0 Release</h3>07/18/2014
+                        <ul>
+                            <li>Added AVX-512VL, AVX-512BW, and AVX-512DQ intrinsics.</li>
+                        </ul>
+                        <h3>3.1.9 Release</h3>06/18/2014
+                        <ul>
+                            <li>Re-classified all *_reduce_* intrinsics (except gmin and gmax) as both AVX-512 and KNC, which were previously classified as only AVX-512.</li>
+                        </ul>
+                        <h3>3.1.8 Release</h3>06/17/2014
+                        <ul>
+                            <li>Corrected instructions for _mm512_mask2int, _mm512_int2mask, _mm512_cvtfxpnt_round_adjustepi32_ps, _mm512_mask_mulhi_epu32, _mm512_mask_i32loscatter_epi64, _mm512_mask_subsetb_epi32, _mm_tzcnti_32, _mm_tzcnti_64, _mm_prefetch, _mm512_extload_*, and _mm512_mask_extload_*.</li>
+                            <li>Re-classified 58 intrinsics as just AVX-512, which were previously classified as both AVX-512 and KNC (primarily broadcast intrinsics, and those containing __m128 or __m256 types).</li>
+                            <li>Re-classified _mm512_log2_ps and _mm512_mask_log2_ps as KNC, which were previously classified as SVML.</li>
+                            <li>Corrected parameters for _mm512_mask_prefetch_i32gather_ps, and re-classified as both AVX-512 and KNC.</li>
+                            <li>Corrected description of _mm_sad_epu8.</li>
+                            <li>Added _mm512_mask_prefetch_i32extgather_ps.</li>
+                            <li>Added prefetchwt1 form of _mm_prefetch.</li>
+                        </ul>
+                        <h3>3.1.7 Release</h3>05/30/2014
+                        <ul>
+                            <li>Corrected instructions for _mm512_permute_pd, _mm512_permutevar_pd, and _mm512_permutevar_ps, which all use vpermilpx instructions rather than vpermpx.</li>
+                            <li>Corrected descriptions for _mm*_xor_si* intrinsics.</li>
+                            <li>Added missing _mm512_mask_prefetch_i32gather_ps intrinsic.</li>
+                            <li>Re-classified _mm512_abs_pd, _mm512_abs_ps, _mm512_mask_abs_pd, and _mm512_mask_abs_ps intrinsics as both AVX-512 and KNC, which were previously classified as only KNC.</li>
+                            <li>Switched to HTTPS.</li>
+                        </ul>
+                        <h3>3.1.6 Release</h3>03/21/2014
+                        <ul>
+                            <li>Corrected instructions for: _mm_sub_epi16, _mm512_cvtfxpnt_round_adjustps_epi32, _mm512_extpackstorelo_epi64, _mm512_mask_extpackstorelo_epi64, _mm512_extpackstorelo_pd, _mm512_mask_extpackstorelo_pd.</li>
+                            <li>Added xsavec, xsaves, and xrstors intrinsics.</li>
+                        </ul>
+                        <h3>3.1.5 Release</h3>03/18/2014
+                        <ul>
+                            <li>Re-classified 342 intrinsics as both AVX-512 and KNC, which were previously classified as only AVX-512.</li>
+                            <li>Added 18 missing KNC intrinsics, which previously existed in AVX-512 but have different intrinsic signatures or instructions encodings for KNC.</li>
+                            <li>Corrected fmadd233 intrinsic descriptions and operations.</li>
+                            <li>Corrected CPUID for VPTESTN* intrinsics to AVX512F.</li>
+                        </ul>
+                        <h3>3.1.4 Release</h3>02/12/2014
+                        <ul>
+                            <li>Corrected "hint" parameter description for prefetch scatter/gather intrinsics.</li>
+                            <li>Corrected _mm512_prefetch_i32extgather_ps, _mm512_mask_prefetch_i32extscatter_ps, and _mm512_prefetch_i32extscatter_ps intrinsic descriptions and operations.</li>
+                        </ul>
+                        <h3>3.1.3 Release</h3>02/06/2014
+                        <ul>
+                            <li>Added AVX512F version of kortestw intrinsics.</li>
+                        </ul>
+                        <h3>3.1.2 Release</h3>01/28/2014
+                        <ul>
+                            <li>Updated throughput on Haswell for vblendpd/ps, vblendvp/ps, and vmulpd/ps.</li>
+                            <li>Added performance data for _mm_alignr_epi8.</li>
+                            <li>Resolved issues in Internet Explorer 8 and 9.</li>
+                            <li>Added intro message.</li>
+                        </ul>
+                        <h3>3.1.1 Release</h3>12/19/2013
+                        <ul>
+                            <li>Fixed VEX-equivalent warning message.</li>
+                        </ul>
+                        <h3>3.1 Release</h3>12/18/2013
+                        <ul>
+                            <li>Added Knights Corner (KNC) intrinsics.</li>
+                            <li>Added 512-bit SVML intrinsics.</li>
+                            <li>Added instruction parameters for many intrinsics, including all AVX-512 intrinsics.</li>
+                            <li>Added instruction latencies for many intrinsics.</li>
+                            <li>Updated AVX-512 CPUID names.</li>
+                            <li>Added feature flags for AVX-512(F,ER,PF,CD), SHA, and MPX.</li>
+                            <li>Corrected descriptions, operations, parameters, and instructions for many intrinsics.</li>
+                        </ul>
+                        <h3>3.0.1 Release</h3>07/23/2013
+                        <ul>
+                            <li>Corrected operations for set and setr intrinsics.</li>
+                        </ul>
+                        <h3>3.0 Release</h3>07/17/2013
+                        <ul>
+                            <li>Added intrinsics for Intel&reg; AVX-512, Intel&reg; MPX, RDSEED, and ADX.</li>
+                            <li>Added additional latency &amp; throughput data up through 4th generation Intel&reg; Core&trade; processor family.</li>
+                            <li>Added 148 missing intrinsics, and corrected information for 96 intrinsics.</li>
+                        </ul>
+                        <h3>2.8.1 Release</h3>05/13/2013
+                        <ul>
+                            <li>Fixed description for _mm_move_ss.</li>
+                            <li>Fixed parameters for _mm_max_epu32.</li>
+                            <li>Replaced references of __int datatype with int.</li>
+                        </ul>
+                        <h3>2.8 Release</h3>02/06/2013
+                        <ul>
+                            <li>Updated descriptions and operations for all intrinsics.</li>
+                            <li>Added additional latency &amp; throughput data up through 3rd generation Intel&reg; Core&trade; processor family.</li>
+                        </ul>
+                        <h3>2.7 Release</h3>11/28/2012
+                        <ul>
+                            <li>Added intrinsics for SVML, BMI1, BMI2, FXSR, INVPCID, LZCNT, POPCNT, RDRAND, RDTSCP, RTM, TSC, XSAVE, XSAVEOPT.</li>
+                            <li>Added header and CPUID feature flag information for each intrinsic.</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </body>
+    </html>
