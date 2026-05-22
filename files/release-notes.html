@@ -19,6 +19,90 @@
                     </div>
                     <section>
                         <h2>Release Notes</h2>
+
+                        <h3>3.6.9 Release</h3>07/12/2024
+                        <ul>
+                            <li>Refined parameter type '__tile' into 'constexpr int'.</li>
+                            <li>Refined the description of _may_i_use_cpu_feature_str to illustrate supported string literals.</li>
+                            <li>Corrected the CPUID of the SHA512, SM3, and SM4 intrinsics.</li>
+                        </ul>
+                        <h3>3.6.8 Release</h3>04/12/2024
+                        <ul>
+                            <li>Added intrinsics for USER_MSR.</li>
+                            <li>Corrected description and operation of _mm_*_fixupimm_*_s*.</li>
+                            <li>Corrected Description of *_nearbyint_p[h|s], *_logb_ph, *_floor_ph, *_round_ph, *_trunc_ph, and *_ceil_ph.</li>
+                            <li>Added more supported flags in _may_i_use_cpu_feature_ext.</li>
+                        </ul>
+                        <h3>3.6.7 Release</h3>12/07/2023
+                        <ul>
+                            <li>Removed const from first argument of _pconfig_u32.</li>
+                            <li>Corrected related description of size_t argument.</li>
+                            <li>Added 4 intrinsics for AVX512F: _mm(256)_rsqrt14_p*.</li>
+                            <li>Removed extended gather/scatter intrinsics.</li>
+                            <li>Removed more KNC intrinsics.</li>
+                            <li>Added 2 general support intrinsics: _may_i_use_cpu_feature_ext and _may_i_use_cpu_feature_str.</li>
+                            <li>Added intrinsics for AVX_VNNI_INT16.</li>
+                            <li>Added intrinsics for SHA512.</li>
+                            <li>Added intrinsics for SM3.</li>
+                            <li>Added intrinsics for SM4.</li>
+                            <li>Aligned stream series intrinsics use void * as 512 variants.</li>
+                        </ul>
+                        <h3>3.6.6 Release</h3>05/10/2023
+                        <ul>
+                            <li>Added intrinsic for PRFCHW.</li>
+                            <li>Added explanations for prefetch hint.</li>
+                            <li>Added intrinsics for AMX-COMPLEX.</li>
+                            <li>Moved F16C into AVX_Family.</li>
+                            <li>Removed all KNC intrinsics.</li>
+                            <li>Corrected description of *_range_* series intrinsics.</li>
+                            <li>Corrected CPUID of FP16C to F16C.</li>
+                            <li>Corrected typo "heirarchy".</li>
+                        </ul>
+                        <h3>3.6.5 Release</h3>01/24/2023
+                        <ul>
+                            <li>Added 64 reduce_*_ep* series intrinsics.</li>
+                            <li>Corrected parameter order of _mm_test_all_zeros and _mm_test_mix_ones_zeros.</li>
+                            <li>Add new throughput and latency data for Sapphire Rapids.</li>
+                        </ul>
+                        <h3>3.6.4 Release</h3>12/14/2022
+                        <ul>
+                            <li>Added SVML intrinsics for AVX512_FP16.</li>
+                            <li>Added intrinsics for:
+                                <ul>
+                                    <li>AMX-FP16</li>
+                                    <li>AVX_IFMA</li>
+                                    <li>AVX_NE_CONVERT</li>
+                                    <li>AVX_VNNI_INT8</li>
+                                    <li>CMPCCXADD</li>
+                                    <li>PREFETCHI</li>
+                                    <li>RAO_INT</li>
+                                </ul>
+                            </li>
+                            <li>Added 9 new AMX intrinsics: __tile_*.
+                            <li>Refined description of _mm_cvtsbh_ss and *_cvtpbh_ps.
+                            <li>Fixed Instruction of _mm_mask3_fmadd_(round)_sch.</li>
+                            <li>Corrected _mm256_cvtps_ph/_mm_cvtps_ph's parameter name and description.</li>
+                            <li>Extended _mm512_(mask/z)_cvt_roundps_ph, _mm512_(mask/z)_cvtps_ph's rounding and SAE control.</li>
+                            <li>Corrected _tile_load/storeconfig's operation.</li>
+                            <li>Corrected stride type of AMX intrinsics.
+                        </ul>
+                        <h3>3.6.3 Release</h3>08/10/2022
+                        <ul>
+                            <li>Removed legacy throughput and latency data for Knights Landing, Ivy Bridge, Haswell, and Broadwell.</li>
+                            <li>Added new throughput and latency data for Icelake Intel Core, Icelake Xeon, and Alderlake.</li>
+                            <li>Updated the header information for CPUID FP16C from emmintrin.h to immintrin.h.</li>
+                            <li>Corrected the operation example for _mm_ucomineq_sh and _mm_comineq_sh.</li>
+                        </ul>
+                        <h3>3.6.2 Release</h3>04/22/2022
+                        <ul>
+                            <li>Added 1 intrinsic for BMI: _tzcnt_u16.</li>
+                            <li>Added a new tag &lt;supported&gt; to mark intrinsics' compiler support.</li>
+                            <li>Added helper enum for ternary intrinsics.</li>
+                            <li>Changed CPUID of _mm_(loadu/storeu)_si(16/64) from SSE to SSE2.</li>
+                            <li>Added new CPUID CRC32 for _mm_crc32_u(8/16/32/64) intrinsics.</li>
+                            <li>Corrected formatting error for _mm_div_ps and _mm_div_ss performance latency data (Ivy Bridge).</li>
+                        </ul>
+                        <h2>Release Notes</h2>
                         <h3>3.6.1 Release</h3>12/06/2021
                         <ul>
                             <li>Corrected operation description for _mm_encodekey256_u32: Change handle size of encodekey256 from 384 to 512.</li>
